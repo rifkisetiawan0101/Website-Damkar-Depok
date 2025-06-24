@@ -1,0 +1,516 @@
+@font-face {
+    font-family: 'Inter Regular';
+    src: url('Font/Inter-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Inter Italic';
+    src: url('Font/Inter-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Inter Bold';
+    src: url('Font/Inter-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Rail Road';
+    src: url('Font/RailroadGothicCC.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HY-Wenhei';
+    src: url('Font/zh-cn.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Inter Regular', sans-serif;
+    color: #0C0C2D;
+    background-color:ghostwhite
+}
+
+@media (max-width: 991.88px) {
+    .custom_nav {
+        background: ghostwhite !important;
+        border-bottom: ghostwhite 1px solid;
+    }
+    
+    .brand_top {
+        font-size: 18px;
+        color: #dc3545 !important;
+    }
+    
+    .brand_bottom {
+        font-size: 30px;
+        color: #dc3545 !important;
+    }
+
+    .nav-link {
+        color: #0C0C2D !important;
+    }
+
+    .container-lg {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .education_card {
+        height: 200px !important;
+    }
+}
+
+/* ---------- Navbar ---------- */
+.brand_text {
+    font-family: 'HY-Wenhei', sans-serif;
+    line-height: 1;
+}
+
+.custom_nav {
+    background: linear-gradient(90deg, 
+        rgba(12, 12, 45, 1) 40%, 
+        rgba(12, 12, 45, 0.33) 65%,
+        rgba(12, 12, 45, 1) 90%
+    );
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    border-bottom: ghostwhite 1px solid;
+    z-index: 20;
+}
+
+.brand_top {
+    font-size: 18px;
+    color: ghostwhite;
+}
+
+.brand_bottom {
+    font-size: 24px;
+    color: ghostwhite;
+}
+
+.nav-link {
+    color: ghostwhite;
+}
+
+.navbar-toggler:hover[aria-expanded="true"] .navbar-toggler-icon, .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 4l22 22M4 26L26 4'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler, .nav-link {
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.navbar-toggler:hover, .nav-link:hover {
+    background-color: #dc3545;
+    color: whitesmoke !important; 
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    transform: scale(0.9);
+}
+
+.navbar-toggler[aria-expanded="true"] {
+    background-color: #dc3545;
+}
+
+.navbar-toggler-icon {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    transform: rotate(180deg) scale(0.95);
+}
+
+/* ---------- Header ---------- */
+.header {
+    font-family: 'Rail Road', sans-serif;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.text-white {
+    color: whitesmoke;
+}
+
+.text-black {
+    color: #0C0C2D;
+}
+
+.header_wrapper {
+    position: relative;
+}
+
+/* ---------- Button ---------- */
+.btn-primary, 
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #FFB238 !important;
+    border-color: #FFB238 !important;
+    color: #0C0C2D !important;
+}
+
+.btn-primary:hover {
+    background-color: #0C0C2D !important;
+    border-color: #0C0C2D !important;
+    color: whitesmoke !important;
+}
+
+.btn-primary:disabled, 
+.btn-primary.disabled {
+    background-color: #FFB238 !important;
+    border-color: #FFB238 !important;
+    opacity: 0.65;
+    color: #0C0C2D !important;
+    cursor: not-allowed;
+}
+
+.form-control:focus {
+    border-color: #FFB238 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 178, 56, 0.25) !important;
+}
+
+.form-control {
+    border: 1px solid #dee2e6;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:hover {
+    border-color: #FFB238;
+}
+
+/* ---------- Hero Section ---------- */
+.hero_section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_video {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.halftone_pattern_black, .halftone_pattern_white {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.halftone_hero {
+    top: 0;
+    height: calc(100% - 30px);
+    z-index: 0;
+}
+
+.halftone_divider_hero {
+    bottom: 0;
+    z-index: 2;
+}
+
+.hero_content {
+    background: linear-gradient(90deg, 
+        rgba(12, 12, 45, 1) 40%, 
+        rgba(12, 12, 45, 0.33) 65%,
+        rgba(12, 12, 45, 1) 90%
+    );
+    position: relative;
+    z-index: 1;
+    padding: 6rem 0 5rem 0;
+}
+
+.custom_btn {
+    background-color: #0C0C2D;
+    color: whitesmoke;
+    font-family: 'Rail Road', sans-serif;
+    font-size: larger;
+    border-radius: 0;
+    border-bottom: 4px solid #FFB238;
+    transition: all 0.2s ease;
+    transform: translateY(0);
+}
+
+.custom_btn:hover {
+    background-color: #FFB238;
+    color: #0C0C2D;
+    border-bottom: 4px solid #dc3545;
+    transform: translateY(-2px);
+}
+
+.video_control {
+    border: 1px solid whitesmoke;
+    padding: 8px;
+    transition: all 0.2s ease;
+    transform: translateY(0);
+}
+
+.video_control:hover {
+    background: #FFB238;
+    border: 1px solid whitesmoke;
+    transform: translateY(-4px);
+}
+
+.video_control:hover svg polygon {
+    stroke: #0C0C2D;
+}
+
+.video_state {
+    color: whitesmoke;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    margin-right: 1rem;
+}
+
+/* ---------- Commitment Section ---------- */
+.commitment_section {
+    position: relative;
+    overflow: hidden;
+    background-color: #0C0C2D;
+}
+
+.commitment_section .display-4 {
+    font-family: 'Rail Road', sans-serif;
+    font-weight: bold;
+}
+
+/* ---------- Event Section ---------- */
+.event_section {
+    background-color: whitesmoke;
+}
+
+.event_section, .event_section .row {
+    position: relative;
+}
+
+.header_event {
+    border-bottom: #dc3545 6px solid;
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 0px;
+    width: 100%;
+}
+
+.halftone_event {
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* sama aja */
+.event_content { 
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.event_date {
+    font-weight: bold;
+    color: #666;
+}
+
+.event_name {
+    font-family: "Rail Road", sans-serif;
+}
+
+.event_image_container {
+    position: relative;
+    height: 100%;
+}
+
+.event_image_container img {
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ---------- Education Section ---------- */
+.education_section {
+    min-height: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header_education {
+    position: relative;
+    padding: 0px;
+    width: 100%;
+}
+
+.halftone_education {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    z-index: 1;
+}
+
+.education_image_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.education_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.education_image.active {
+    opacity: 1;
+}
+
+.overlay_education, .overlay2_education  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 12, 45, 0.75);
+}
+
+.overlay1_education {
+    z-index: -1;
+}
+
+.overlay2_education {
+    z-index: -2;
+}
+
+.container_education {
+    position: relative;
+    z-index: 1;
+}
+
+.education_content {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.education_card {
+    background: linear-gradient(-45deg, transparent, rgba(255, 255, 255, 0.1));
+    position: relative;
+    border: 2px solid whitesmoke;
+    padding: 2rem 2rem 4rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+    height: 250px;
+    margin-bottom: 2rem;
+}
+
+.education_card.active {
+    transform: translateY(-5px);
+    border: 2px solid #FFB238;
+}
+
+.education_name {
+    color: #FFB238;
+    font-family: 'Rail Road', sans-serif;
+}
+
+.education_description {
+    color: ghostwhite;
+    line-height: 1.5;
+}
+
+/* ---------- Event Section ---------- */
+.event_section {
+    background-color: whitesmoke;
+    position: relative;
+}
+
+.header_callUs {
+    border-bottom: #dc3545 6px solid;
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+#map {
+    height: 600px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    z-index: 0;
+}
+
+.search_map input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: 80%;
+    font-size: 16px;
+}
+.search_map button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+.search_map button:hover {
+    background-color: #0056b3;
+}
+
+.contact_form {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#formResponse {
+    transition: all 0.3s ease;
+}
+
+.canvas-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#floorPlanCanvas {
+    width: 100%;
+    height: auto;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.footer_section {
+    background-color: #0C0C2D;
+}

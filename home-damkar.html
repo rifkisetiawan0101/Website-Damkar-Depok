@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Damkar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style-damkar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script-damkar.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="custom_nav navbar navbar-expand-lg fixed-top px-3">
+        <div class="container-lg">
+            <!-- Brand -->
+            <a class="navbar-brand d-flex align-items-center" href="home-damkar.html">
+                <img src="Image/logo_damkar.png" alt="Logo Damkar" width="50" height="50" class="me-3">
+                <div class="brand_text">
+                    <div class="brand_top">Dinas Pemadam Kebakaran dan</div>
+                    <div class="brand_bottom">Penyelamatan Kota Depok</div>
+                </div>
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-3" href="#event">Kegiatan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-3" href="#education">Edukasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-3" href="#callUs">Pelaporan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero_section d-flex align-items-center">
+        <video class="hero_video" autoplay muted loop playsinline>
+            <source src="Video/cinematic-damkar.mp4" type="video/mp4">
+        </video>
+
+        <svg class="halftone_pattern_black halftone_hero" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+        
+        <div class="hero_content w-100">
+            <div class="container-lg">
+                <div class="row align-items-end">
+                    <div class=" col-md-6">
+                        <h1 class="header display-3 mt-4 mb-4">PANTANG PULANG SEBELUM API PADAM</h1>
+                        <p class="lead text-white">Saat orang lain menjauh dari api, kami maju untuk melindungi. Kami bukan hanya pemadam kebakaran — tugas kami lebih daripada itu. Kami adalah penyelamat. <i> Kucing atas pokok, kerbau masuk parit, kuda terlepas, ular dalam rumah, semua kami selamatkan!</i> </p>
+                    
+                        <a href="login-damkar.html" class="btn custom_btn px-5 py-3">GABUNG</a>
+                    </div>
+                    
+                    <div class="col-md-6 d-flex align-items-end justify-content-end py">
+                        <p class="video_state">Pause Video</p>
+                        <button class="btn video_control" id="playPauseBtn">
+                            <!-- Play Icon -->
+                            <svg class="play_icon d-none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="4,0 22,12 4,24" fill="none" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+                            </svg>
+                            <!-- Pause Icon -->
+                            <svg class="pause_icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <polygon points="8,2 8,22" stroke="white" stroke-width="3"/>
+                                <polygon points="16,2 16,22" stroke="white" stroke-width="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="halftone_pattern_white halftone_divider_hero" width="100%" height="30px" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="30px" fill="url(#dots)"/>
+        </svg>
+    </section>
+    
+    <!-- Commitment Section -->
+    <section id="commitment" class="commitment_section py-5">
+        <div class="container-lg py-4">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="d-flex align-items-center gap-4 mb-4">
+                        <p class="lead text-white fst-italic mb-0 flex-shrink-0">VISI KAMI</p>
+                        <svg width="100%" height="4" viewBox="0 0 100% 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="1" x2="100%" y2="1" stroke="#FFB238" stroke-width="4"/>
+                        </svg>
+                    </div>
+                    <h2 class="header display-5 text-white mb-4">"Terwujudnya Pelayanan Penanggulangan Kebakaran dan Bencana yang Responsif dan Profesional"</h2>
+                    <p class="lead text-white">Melalui Visi tersebut, diharapkan pelayanan Dinas Pemadam Kebakaran Kota Depok meningkat dan lebih baik lagi dari sebelumnya dan semakin responsif dan profesional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section id="event" class="event_section py-5">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="header_wrapper">
+                        <h2 class="header header_event display-4 text-black mb-0">KEGIATAN KAMI</h2>
+                        <svg class="halftone_pattern_black halftone_event" width="100%" height="30px" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="30px" fill="url(#dots)"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 event_content">
+                <!-- Content populated by JavaScript -->
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 d-flex justify-content-center">
+                    <button id="prevBtn" class="btn btn-primary me-3" disabled>&laquo; Sebelumnya</button>
+                    <button id="nextBtn" class="btn btn-primary">Selanjutnya &raquo;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education_section py-5" id="education">
+        <div class="overlay2_education"></div>
+        <div class="education_image_wrapper">
+            <img src="Image/default-education.png" alt="education Image" class="education_image active" id="educationImage">
+            <img src="" alt="Education Image" class="education_image">
+        </div>
+    
+        <svg class="halftone_pattern_black halftone_education_bg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+        <div class="overlay_education"></div>
+    
+        <!-- pelatihan -->
+        <div class="container-lg container_education">
+            <div class="row">
+                <div class="d-flex align-items-center gap-4 mb-4">
+                    <p class="lead text-white fst-italic mb-0 flex-shrink-0">EDUKASI</p>
+                    <svg width="100%" height="4" viewBox="0 0 100% 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="1" x2="100%" y2="1" stroke="#FFB238" stroke-width="4"/>
+                    </svg>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-lg-6">                
+                    <div class="header_wrapper d-inline-block">
+                        <h2 class="header header_education display-4 text-white mb-0">EDUKASI MASYARAKAT</h2>
+                        <svg class="halftone_pattern_white halftone_education" width="100%" height="30px" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="30px" fill="url(#dots)"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row education_content">
+                <!-- Content populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call Us Section -->
+    <section id="callUs" class="callUs_section py-5">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <div class="header_wrapper">
+                        <h2 class="header header_callUs display-4 text-black mb-0">PELAPORAN</h2>
+                        <svg class="halftone_pattern_black halftone_event" width="100%" height="30px" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="30px" fill="url(#dots)"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="map"></div>
+                    <div class="search_map">
+                        <div class="input-group">
+                            <input type="text" id="searchInput" placeholder="Masukkan lokasi anda..." class="form-control">
+                            <button id="searchButton" class="btn btn-primary">Cari</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form id="contactForm" class="contact_form p-4" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Nomor Telepon</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Alamat</label>
+                            <textarea class="form-control" id="address" name="address" rows="2" placeholder="Masukkan alamat Anda dari peta atau kolom pencarian..." required readonly></textarea>
+                            <input type="hidden" id="lat" name="lat">
+                            <input type="hidden" id="lng" name="lng">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jenis Laporan</label>
+                            <div>
+                                <input type="radio" id="radioKebakaran" name="jenis_laporan" value="Kebakaran" checked>
+                                <label for="radioKebakaran" class="me-3">Kebakaran</label>
+                                <input type="radio" id="radioEvakuasi" name="jenis_laporan" value="Evakuasi">
+                                <label for="radioEvakuasi">Evakuasi</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Upload Gambar/Video</label>
+                            <div class="input-group">
+                                <input type="file" 
+                                    class="form-control" 
+                                    id="mediaInput" 
+                                    name="media_call" 
+                                    accept="image/*,video/*"
+                                    onchange="previewMedia(this)">
+                            </div>
+                            <div id="mediaPreview" class="mt-2">
+                                <!-- Preview will be shown here -->
+                            </div>
+                            <small class="text-muted">
+                                Format yang didukung: JPG, PNG, MP4, MOV (Max: 10MB)
+                            </small>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Kirim</button>
+                    </form>
+                    <div id="formResponse" class="alert mt-3 d-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer Section -->
+    <footer class="footer_section py-5">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-center justify-content-center mb-4">
+                        <img src="Image/logo_damkar.png" alt="Logo Damkar" width="60" height="60" class="me-3">
+                        <div class="brand_text">
+                            <div class="brand_top">Dinas Pemadam Kebakaran dan</div>
+                            <div class="brand_bottom">Penyelamatan Kota Depok</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-white-50 text-center mb-0">
+                        © 2025 Dinas Pemadam Kebakaran dan Penyelamatan Kota Depok. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

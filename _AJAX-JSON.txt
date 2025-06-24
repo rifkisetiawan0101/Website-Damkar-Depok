@@ -1,0 +1,192 @@
+A.  JSON
+    JSON (JavaScript Object Notation) adalah format pertukaran data ringan yang digunakan untuk mengirim data antara client dan server.
+
+    Implementasi JSON
+    a.  Di sisi Client (JavaScript)
+        Client mengambil data dengan Fetch API
+        script-damkar.js:134
+        fetch('fetch-data.php')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // blabla panjang
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+    b.  Di sisi Server (PHP)
+        Server mengirim data JSON dengan mengubah array PHP menjadi string JSON
+        fetch-data.php:17
+        $response = array(
+            'status' => 'success',
+            'events' => array(),
+            'educations' => array(),
+            'locations' => array(),
+            'callus' => array(),
+            'users' => array()
+        );
+        // blabla panjang
+        echo json_encode($response);
+
+        CONTOH STRING JSON YANG DITERIMA SERVER
+        Fetched data: 
+        {
+            status: 'success', 
+            events: Array(3), 
+            educations: Array(3), 
+            locations: Array(50), 
+            callus: Array(5), …
+        }
+        
+        callus: Array(5)
+        0: {
+            address_call: "Jalan Sungai Musi, Tytyan Indah, Summarecon, Harapan Mulya, Bekasi, West Java, Java, 17124, Indonesia"
+            created_at: "2025-04-08 22:38:11"
+            floorplan_call: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlg
+            id_call: "12"
+            message_call: "Alhamdulillah"
+            name_call: "Infokan cuy"
+            phone_call: "0812"
+            [[Prototype]]: Object
+        }
+
+    c.  Alur Kerja JSON
+        1.  Request dari Client:
+            - Browser meminta data ke fetch-data.php
+            - Untuk page admin, request dikirim dengan parameter admin=1
+        2.  Proses di Server:
+            - PHP mengambil data dari database MySQL
+            - Data diformat dalam array PHP
+            - Array dikonversi ke JSON dengan json_encode()
+            - JSON dikirim ke client
+    	3.  Response ke Client:
+            - JavaScript menerima string JSON
+            - response.json() mengubah string JSON menjadi object JavaScript
+            - Data ditampilkan di tabel menggunakan DataTable
+
+
+B.  AJAX
+    AJAX (Asynchronous JavaScript and XML) diimplementasikan di web Damkar untuk melakukan operasi CRUD tanpa reload halaman.
+
+    a.  Fetch API sebagai Metode AJAX
+        AJAX dapat diimplementasikan dengan XML dan Fetch API. Saya menggunakan fetch untuk metode AJAX karena lebih modern, simpel dan mudah dipahami. Website saya juga tidak membutuhkan support untuk browser lama yang ditawarkan XMLHttpRequest.
+
+        script-damkar.js:134
+        fetch('fetch-data.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.events && data.events.length > 0) {
+                events = data.events;
+                setupEventNavigation();
+                displayEvent(0); // Display first event
+            }
+
+            if (data.educations && data.educations.length > 0) {
+                educations = data.educations;
+                setupeducationCards();
+                displayeducation(0, 
+                    document.querySelectorAll('.education_card'),
+                    document.querySelectorAll('.education_image')
+                );
+            }
+
+            if (data.locations && data.locations.length > 0) {
+                locations = data.locations;
+                loadMap();
+            }
+        })
+        .catch(error => {
+            console.error('Error details:', error);
+            alert('Terjadi kesalahan saat memuat data. Silakan refresh halaman.');
+        });
+    
+    b.  Operasi CRUD dengan AJAX
+        CRUD adalah Create, Read, Update dan Delete. Implementasi AJAX pada CRUD di sini adalah page tidak perlu di-reload untuk menampilkan data.
+
+        1.  CREATE DATA
+            script-admin.js:195
+            $('#locationForm, #eventForm, #educationForm').on('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                formData.append('action', 'add');
+                formData.append('table', getTableName(this.id));
+
+                // #Implementasi AJAX create data
+                fetch('process-data.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.status === 'success') {
+                        $(`#${this.id.replace('Form', '')}Modal`).modal('hide');
+                        refreshTable(getTableName(this.id));
+                        $(this).trigger('reset');
+                        alert('Add data success');
+                    } else {
+                        alert(data.message || 'Error add data');
+                    }
+                })
+                .catch(error => {
+                    alert('An error occurred while add data');
+                });
+            });
+        
+        2.  READ DATA
+            script-admin.js:4
+            fetch('fetch-data.php?admin=1')
+            .then(response => response.json())
+            .then(data => {
+                // blabla panjang
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+        3.  UPDATE DATA
+            fetch('process-data.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Update response:', data); // Debug log
+                if(data.status === 'success') {
+                    $(`#edit${baseTableName}Modal`).modal('hide');
+                    refreshTable(getTableName(table));
+                    $(this).trigger('reset');
+                    alert('Update successful');
+                } else {
+                    alert(data.message || 'Error updating data');
+                }
+            })
+            .catch(error => {
+                console.error('Update error:', error);
+                alert('Error updating: ' + error);
+            });
+        
+        4.  DELETE DATA
+            fetch('process-data.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    refreshTable(table);
+                    alert('Delete data success');
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));

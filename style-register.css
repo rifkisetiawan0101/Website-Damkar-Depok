@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'Inter Regular';
+    src: url('Font/Inter-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'HY-Wenhei';
+    src: url('Font/zh-cn.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Inter Regular', sans-serif;
+    color: #0C0C2D;
+    background-color:ghostwhite
+}
+
+@media (max-width: 991.88px) {
+    .custom_nav {
+        background: ghostwhite !important;
+        border-bottom: ghostwhite 1px solid;
+    }
+    
+    .brand_top {
+        font-size: 18px;
+        color: #dc3545 !important;
+    }
+    
+    .brand_bottom {
+        font-size: 30px;
+        color: #dc3545 !important;
+    }
+
+    .container-lg {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+}
+
+/* ---------- Navbar ---------- */
+.brand_text {
+    font-family: 'HY-Wenhei', sans-serif;
+    line-height: 1;
+}
+
+.custom_nav {
+    background-color: #0C0C2D;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    border-bottom: ghostwhite 1px solid;
+    z-index: 20;
+}
+
+.brand_top {
+    font-size: 18px;
+    color: ghostwhite;
+}
+
+.brand_bottom {
+    font-size: 24px;
+    color: ghostwhite;
+}
+
+
+body {
+    background-color: #0C0C2D;
+}
+
+.register_card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary, 
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #FFB238 !important;
+    border-color: #FFB238 !important;
+    color: #0C0C2D !important;
+}
+
+.btn-primary:hover {
+    background-color: #0C0C2D !important;
+    border-color: #0C0C2D !important;
+    color: whitesmoke !important;
+}
+
+.btn-primary:disabled, 
+.btn-primary.disabled {
+    background-color: #FFB238 !important;
+    border-color: #FFB238 !important;
+    opacity: 0.65;
+    color: #0C0C2D !important;
+    cursor: not-allowed;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: whitesmoke;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #FFB238;
+    color: whitesmoke;
+    box-shadow: 0 0 0 0.25rem rgba(255, 178, 56, 0.25);
+}
+
+.text-warning {
+    color: #FFB238 !important;
+}
+
+.text-warning:hover {
+    color: #e69b26 !important;
+    text-decoration: underline !important;
+}

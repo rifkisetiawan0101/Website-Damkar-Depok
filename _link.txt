@@ -1,0 +1,5 @@
+http://localhost/_Project%20Damkar%20DB/home-damkar.html
+http://localhost/_Project%20Damkar%20DB/register-damkar.html
+http://localhost/_Project%20Damkar%20DB/admin-damkar.html
+
+https://drive.google.com/drive/u/2/folders/1LQZoArOgzcYsxmpeA9OtxE2cHuAUqI3Z
