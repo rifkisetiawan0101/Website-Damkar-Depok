@@ -54,10 +54,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Prerequisites
 
-You will need a local server environment that supports PHP and MySQL, such as:
-* [XAMPP](https://www.apachefriends.org/index.html)
-* [WAMP](https://www.wampserver.com/en/)
-* [MAMP](https://www.mamp.info/en/mamp/)
+You will need a local server environment that supports PHP and MySQL, such as: [XAMPP](https://www.apachefriends.org/index.html)
 
 ### Installation
 
@@ -94,22 +91,19 @@ You will need a local server environment that supports PHP and MySQL, such as:
 
 ## 📸 Screenshots
 
-*(It is highly recommended to add screenshots of your project here)*
-
 **Homepage with Interactive Map**
-`![Homepage Screenshot](path/to/your/screenshot_home.png)`
+
+![Homepage Screenshot](Homepage.jpeg)
 
 **Admin Dashboard**
-`![Admin Dashboard Screenshot](path/to/your/screenshot_admin.png)`
 
-**Emergency Reporting Form**
-`![Reporting Form Screenshot](path/to/your/screenshot_form.png)`
+![Admin Dashboard Screenshot](Admin Dashboard.jpeg)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the Apache 2.0 License. See the [`LICENSE`](LICENS.txt) file for details.
+This project is licensed under the Apache 2.0 License. See the [`LICENSE`](LICENSE) file for details.
 
 ---
 
