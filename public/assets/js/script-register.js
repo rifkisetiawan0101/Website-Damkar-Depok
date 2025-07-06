@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const formData = new FormData(this);
 
-        fetch('register-process.php', {
+        fetch('../src/core/register-process.php', {
             method: 'POST',
             body: formData
         })
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.status === 'success') {
                 registerForm.reset();
                 setTimeout(() => {
-                    window.location.href = 'login-damkar.html';
+                    window.location.href = 'login.html';
                 }, 2000);
             }
         })

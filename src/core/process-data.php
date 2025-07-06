@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-require_once 'db-config.php';
+require_once '../config/db-config.php';
 
 // Check if action is set
 if (!isset($_POST['action'])) {

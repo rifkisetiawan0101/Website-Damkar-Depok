@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             password: document.getElementById('password').value
         };
 
-        fetch('login-process.php', {
+        fetch('../src/core/login-process.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 formResponse.classList.add('alert-success');
                 formResponse.textContent = 'Berhasil Login.';
                 setTimeout(() => {
-                    window.location.href = 'admin-damkar.html';
+                    window.location.href = 'admin.html';
                 }, 1500);
             }
         })

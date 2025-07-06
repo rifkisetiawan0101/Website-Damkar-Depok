@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // #Implementasi JSON Mengambil Data dengan Fetch API
         // #Implementasi AJAX read data
-        fetch('fetch-data.php?admin=1')
+        fetch('../src/core/fetch-data.php?admin=1')
             .then(response => response.json())
             .then(data => {
                 if (data.callus && Array.isArray(data.callus)) {
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function refreshTable(tableName) {
-            fetch('fetch-data.php?admin=1')
+            fetch('../src/core/fetch-data.php?admin=1')
                 .then(response => response.json())
                 .then(data => {
                     const table = $(`#${tableName}Table`).DataTable();
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('table', getTableName(this.id));
 
             // #Implementasi AJAX create data
-            fetch('process-data.php', {
+            fetch('../src/core/process-data.php', {
                 method: 'POST',
                 body: formData
             })
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.openEditModal = function(table, id) {
             console.log('Opening edit modal for', table, 'with id', id); // Debug log
             
-            fetch(`fetch-data.php?table=${table}&id=${id}`)
+            fetch(`../src/core/fetch-data.php?table=${table}&id=${id}`)
                 .then(response => response.json())
                 .then(data => {
                     console.log('Fetched data for edit:', data); // Debug log
@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const baseTableName = this.id.replace('editForm', '');
 
             // #Implementasi AJAX update data
-            fetch('process-data.php', {
+            fetch('../src/core/process-data.php', {
                 method: 'POST',
                 body: formData
             })
@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('id', id);
 
             // #Implementasi AJAX delete data
-            fetch('process-data.php', {
+            fetch('../src/core/process-data.php', {
                 method: 'POST',
                 body: formData
             })
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('id', id);
             formData.append('status', newStatus);
 
-            fetch('process-data.php', {
+            fetch('../src/core/process-data.php', {
                 method: 'POST',
                 body: formData
             })

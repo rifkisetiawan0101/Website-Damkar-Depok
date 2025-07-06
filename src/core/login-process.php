@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 session_start();
-require_once 'db-config.php';
+require_once '../config/db-config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);

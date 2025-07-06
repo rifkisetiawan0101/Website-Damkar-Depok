@@ -1,18 +1,19 @@
 <?php
-require_once 'db-config.php';
+header('Content-Type: application/json');
+require_once '../config/db-config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
     $message = mysqli_real_escape_string($conn, $_POST['message']);
-    $lat = isset($_POST['lat']) ? floatval($_POST['lat']) : null;
-    $lng = isset($_POST['lng']) ? floatval($_POST['lng']) : null;
+    $lat = isset($_POST['lat_call']) ? floatval($_POST['lat_call']) : null;
+    $lng = isset($_POST['lng_call']) ? floatval($_POST['lng_call']) : null;
 
     // Handle media file
-    $media_path = null;
+    $media_path_for_db = null; // Path yang akan disimpan ke DB
     $media_type = null;
-    if (isset($_FILES['media_call']) && $_FILES['media_call']['size'] > 0) {
+    if (isset($_FILES['media_call']) && $_FILES['media_call']['error'] === UPLOAD_ERR_OK) {
         if ($_FILES['media_call']['size'] > 10 * 1024 * 1024) {
             echo json_encode([
                 'status' => 'error',
@@ -21,18 +22,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        $target_dir = "Uploads/";
+        $target_dir_filesystem = "../../public/assets/uploads/";
         $filename = time() . '_' . basename($_FILES["media_call"]["name"]);
-        $target_file = $target_dir . $filename;
+        $target_file_filesystem = $target_dir_filesystem . $filename;
+
+        // Cek dan buat direktori jika belum ada
+        if (!is_dir($target_dir_filesystem)) {
+            mkdir($target_dir_filesystem, 0777, true);
+        }
 
         // Cek dan upload file
-        if (move_uploaded_file($_FILES["media_call"]["tmp_name"], $target_file)) {
-            $media_path = $target_file;
+        if (move_uploaded_file($_FILES["media_call"]["tmp_name"], $target_file_filesystem)) {
+            // Simpan path yang web-accessible ke database
+            $media_path_for_db = 'assets/uploads/' . $filename;
             $media_type = $_FILES['media_call']['type'];
         } else {
             echo json_encode([
                 'status' => 'error',
-                'message' => 'Gagal upload file.'
+                'message' => 'Gagal mengupload file. Cek izin folder.'
             ]);
             exit;
         }
@@ -43,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), 0)";
 
     $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, 'ssssssss', $name, $phone, $address, $lat, $lng, $message, $media_path, $media_type);
+    mysqli_stmt_bind_param($stmt, 'ssddssss', $name, $phone, $address, $lat, $lng, $message, $media_path_for_db, $media_type);
 
     if (mysqli_stmt_execute($stmt)) {
         echo json_encode([
@@ -53,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo json_encode([
             'status' => 'error',
-            'message' => 'Gagal mengirim pesan: ' . mysqli_error($conn)
+            'message' => 'Gagal mengirim pesan: ' . mysqli_stmt_error($stmt)
         ]);
     }
 

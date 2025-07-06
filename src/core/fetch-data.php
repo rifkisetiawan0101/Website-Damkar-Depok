@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 try {
     session_start();
-    require_once 'db-config.php';
+    require_once '../config/db-config.php';
 
     // Check database connection
     if (!$conn) {

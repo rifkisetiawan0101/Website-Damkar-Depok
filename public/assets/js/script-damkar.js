@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // #Implementasi JSON Mengambil Data dengan Fetch API
     // #Implementasi AJAX Mengambil Data dengan Fetch API
-    fetch('fetch-data.php')
+    fetch('../src/core/fetch-data.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -309,7 +309,7 @@ function initMap() {
     
     // Create marker icons
     const fireStationIcon = L.icon({
-        iconUrl: 'Image/fire-station.png',
+        iconUrl: 'assets/images/fire-station.png',
         iconSize: [32, 32],
         iconAnchor: [17, 0],
         popupAnchor: [0, 0]
@@ -325,14 +325,14 @@ function initMap() {
     });
 
     const fireIcon = L.icon({
-        iconUrl: 'Image/fire-marker.png',
+        iconUrl: 'assets/images/fire-marker.png',
         iconSize: [45, 45],
         iconAnchor: [23, 0],
         popupAnchor: [0, 0]
     });
 
     const rescueIcon = L.icon({
-        iconUrl: 'Image/rescue-marker.png', // pastikan file ini ada di folder Image/
+        iconUrl: 'assets/images/rescue-marker.png', // pastikan file ini ada di folder assets/images/
         iconSize: [40, 40],
         iconAnchor: [20, 0],
         popupAnchor: [0, 0]
@@ -492,7 +492,7 @@ function handleFormSubmit(e) {
     formData.append('lat_call', document.getElementById('lat').value);
     formData.append('lng_call', document.getElementById('lng').value);
 
-    fetch('submit-callus.php', {
+    fetch('../src/core/submit-callus.php', {
         method: 'POST',
         body: formData
     })

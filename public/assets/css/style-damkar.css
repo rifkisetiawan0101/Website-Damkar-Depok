@@ -1,26 +1,32 @@
 @font-face {
-    font-family: 'Inter Regular';
-    src: url('Font/Inter-Regular.otf') format('opentype');
+    font-family: 'Inter'; /* Nama keluarga font yang sama */
+    src: url('../fonts/Inter-Regular.otf') format('opentype');
+    font-weight: normal; /* atau 400 */
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'Inter Italic';
-    src: url('Font/Inter-Italic.otf') format('opentype');
+    font-family: 'Inter'; /* Nama keluarga font yang sama */
+    src: url('../fonts/Inter-Italic.otf') format('opentype');
+    font-weight: normal; /* atau 400 */
+    font-style: italic;
 }
 
 @font-face {
-    font-family: 'Inter Bold';
-    src: url('Font/Inter-Bold.otf') format('opentype');
+    font-family: 'Inter'; /* Nama keluarga font yang sama */
+    src: url('../fonts/Inter-Bold.otf') format('opentype');
+    font-weight: bold; /* atau 700 */
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Rail Road';
-    src: url('Font/RailroadGothicCC.ttf') format('truetype');
+    src: url('../fonts/RailroadGothicCC.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'HY-Wenhei';
-    src: url('Font/zh-cn.ttf') format('truetype');
+    src: url('../fonts/zh-cn.ttf') format('truetype');
 }
 
 body {
@@ -35,12 +41,12 @@ body {
         border-bottom: ghostwhite 1px solid;
     }
     
-    .brand_top {
+    .navbar-brand .brand_top {
         font-size: 18px;
         color: #dc3545 !important;
     }
     
-    .brand_bottom {
+    .navbar-brand .brand_bottom {
         font-size: 30px;
         color: #dc3545 !important;
     }
@@ -135,7 +141,7 @@ body {
 /* ---------- Header ---------- */
 .header {
     font-family: 'Rail Road', sans-serif;
-    font-weight: bold;
+    font-weight: 550;
     color: whitesmoke;
 }
 
