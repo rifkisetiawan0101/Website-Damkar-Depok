@@ -101,7 +101,9 @@ You will need a local server environment that supports PHP and MySQL, such as: [
 
 ## 📄 License
 
-This project is licensed under the Apache 2.0 License. See the [`LICENSE`](LICENSE) file for details.
+This project is licensed under the MIT License for educational purpose. All the images are belongs to it's owner, especially Dinas Pemadam Kebakaran dan Penyelamatan Kota Depok.
+
+See the [`LICENSE`](LICENSE) file for details.
 
 ---
 
