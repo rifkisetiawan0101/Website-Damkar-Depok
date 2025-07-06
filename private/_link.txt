@@ -1,5 +1,0 @@
-http://localhost/Website-Damkar-Depok/public/home.html
-http://localhost/Website-Damkar-Depok/public/register.html
-http://localhost/Website-Damkar-Depok/public/admin.html
-
-https://drive.google.com/drive/u/2/folders/1LQZoArOgzcYsxmpeA9OtxE2cHuAUqI3Z
