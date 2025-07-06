@@ -1,7 +1,5 @@
 # 🚒 Depok City Fire & Rescue Department Website
 
-<img src="https://komarev.com/ghpvc/?username=[YOUR_GITHUB_USERNAME]&label=Project%20Views&color=DC3545&style=flat" alt="Project Views"/>
-
 ## ✨ Overview
 
 The **Depok City Fire & Rescue Website** is a functional and informative web platform designed to serve the community of Depok, Indonesia. This project acts as a central hub for public information regarding the department's activities and educational outreach. Crucially, it features a modern, interactive emergency reporting system for citizens. The application is supported by a comprehensive admin dashboard that allows for complete management of all website content.
