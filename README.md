@@ -107,6 +107,8 @@ This project is licensed under the Apache 2.0 License. See the [`LICENSE`](LICEN
 
 ## 🙏 Credits
 
-Fullstack Developer - **[Rifki Setiawan]** [Rifki's Github](https://github.com/rifkisetiawan0101).
-UI/UX Designer - [Danang Aryaputra Giffary](https://github.com/nangsen1)
-Researcher - [Yoseph Satria Praka](https://www.instagram.com/yyoooosz/)
+* Fullstack Developer - **[Rifki Setiawan]**(https://github.com/rifkisetiawan0101).
+
+* UI/UX Designer - **[Danang Aryaputra Giffary]**(https://github.com/nangsen1)
+
+* Researcher - **[Yoseph Satria Praka]**(https://www.instagram.com/yyoooosz/)
