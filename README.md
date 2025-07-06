@@ -95,7 +95,7 @@ You will need a local server environment that supports PHP and MySQL, such as: [
 
 **Admin Dashboard**
 
-![Admin Dashboard Screenshot](Admin Dashboard.jpeg)
+![Admin Dashboard Screenshot](Admin-Dashboard.jpeg)
 
 ---
 
